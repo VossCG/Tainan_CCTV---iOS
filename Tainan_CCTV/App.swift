@@ -11,7 +11,7 @@ import SwiftUI
 struct Tainan_CCTVApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
