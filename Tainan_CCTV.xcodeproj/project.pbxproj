@@ -7,18 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B95144462C57882800F345BA /* Tainan_CCTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95144452C57882800F345BA /* Tainan_CCTVApp.swift */; };
-		B95144482C57882800F345BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95144472C57882800F345BA /* ContentView.swift */; };
+		B92030EF2C5B98EA0092FDF1 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92030EE2C5B98EA0092FDF1 /* UserDefaultManager.swift */; };
+		B94E140C2C5B560300C315E3 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94E140B2C5B560300C315E3 /* SearchBar.swift */; };
+		B95144462C57882800F345BA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95144452C57882800F345BA /* App.swift */; };
 		B951444A2C57882A00F345BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B95144492C57882A00F345BA /* Assets.xcassets */; };
 		B951444D2C57882A00F345BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B951444C2C57882A00F345BA /* Preview Assets.xcassets */; };
+		B96C41532C58B5EA00CEB929 /* CCTVDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96C41522C58B5EA00CEB929 /* CCTVDto.swift */; };
+		B96C41552C58B71D00CEB929 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96C41542C58B71D00CEB929 /* APIClient.swift */; };
+		B96C41572C58CA0A00CEB929 /* CCTVViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96C41562C58CA0A00CEB929 /* CCTVViewModel.swift */; };
+		B96C41592C58CD6100CEB929 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96C41582C58CD6100CEB929 /* WebView.swift */; };
+		B96C415C2C58D89F00CEB929 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96C415B2C58D89F00CEB929 /* HomeView.swift */; };
+		B96C415E2C58D8AD00CEB929 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96C415D2C58D8AD00CEB929 /* SearchView.swift */; };
+		B96C41602C58D8DA00CEB929 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96C415F2C58D8DA00CEB929 /* FavoriteView.swift */; };
+		B96C41662C58DCE800CEB929 /* CCTVDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96C41652C58DCE800CEB929 /* CCTVDetailView.swift */; };
+		B96C41682C58E29F00CEB929 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96C41672C58E29F00CEB929 /* MainView.swift */; };
+		B96C416C2C58F1AE00CEB929 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96C416B2C58F1AE00CEB929 /* Constants.swift */; };
+		B9AE6B592C5A27650084A1AC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AE6B582C5A27650084A1AC /* LocationManager.swift */; };
+		B9AE6B5C2C5A2E710084A1AC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AE6B5B2C5A2E710084A1AC /* HomeViewModel.swift */; };
+		B9BE12512C5A9FC90002FCEF /* LocationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BE12502C5A9FC90002FCEF /* LocationUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B92030EE2C5B98EA0092FDF1 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		B94E140B2C5B560300C315E3 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		B95144422C57882800F345BA /* Tainan_CCTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tainan_CCTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B95144452C57882800F345BA /* Tainan_CCTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tainan_CCTVApp.swift; sourceTree = "<group>"; };
-		B95144472C57882800F345BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B95144452C57882800F345BA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		B95144492C57882A00F345BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B951444C2C57882A00F345BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B96C41522C58B5EA00CEB929 /* CCTVDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTVDto.swift; sourceTree = "<group>"; };
+		B96C41542C58B71D00CEB929 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		B96C41562C58CA0A00CEB929 /* CCTVViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTVViewModel.swift; sourceTree = "<group>"; };
+		B96C41582C58CD6100CEB929 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		B96C415B2C58D89F00CEB929 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B96C415D2C58D8AD00CEB929 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		B96C415F2C58D8DA00CEB929 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		B96C41652C58DCE800CEB929 /* CCTVDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCTVDetailView.swift; path = ../components/CCTVDetailView.swift; sourceTree = "<group>"; };
+		B96C41672C58E29F00CEB929 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B96C416B2C58F1AE00CEB929 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B9AE6B582C5A27650084A1AC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		B9AE6B5A2C5A2B410084A1AC /* Tainan-CCTV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Tainan-CCTV-Info.plist"; sourceTree = SOURCE_ROOT; };
+		B9AE6B5B2C5A2E710084A1AC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B9BE12502C5A9FC90002FCEF /* LocationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B92030ED2C5B98D00092FDF1 /* db */ = {
+			isa = PBXGroup;
+			children = (
+				B92030EE2C5B98EA0092FDF1 /* UserDefaultManager.swift */,
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
 		B95144392C57882800F345BA = {
 			isa = PBXGroup;
 			children = (
@@ -51,10 +88,16 @@
 		B95144442C57882800F345BA /* Tainan_CCTV */ = {
 			isa = PBXGroup;
 			children = (
-				B95144452C57882800F345BA /* Tainan_CCTVApp.swift */,
-				B95144472C57882800F345BA /* ContentView.swift */,
-				B95144492C57882A00F345BA /* Assets.xcassets */,
+				B92030ED2C5B98D00092FDF1 /* db */,
+				B9BE124F2C5A9FB90002FCEF /* utils */,
 				B951444B2C57882A00F345BA /* Preview Content */,
+				B96C415A2C58D89300CEB929 /* views */,
+				B96C41512C58B5C200CEB929 /* remote */,
+				B9AE6B572C5A273B0084A1AC /* manager */,
+				B95144452C57882800F345BA /* App.swift */,
+				B96C416B2C58F1AE00CEB929 /* Constants.swift */,
+				B95144492C57882A00F345BA /* Assets.xcassets */,
+				B9AE6B5A2C5A2B410084A1AC /* Tainan-CCTV-Info.plist */,
 			);
 			path = Tainan_CCTV;
 			sourceTree = "<group>";
@@ -65,6 +108,87 @@
 				B951444C2C57882A00F345BA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B96C41512C58B5C200CEB929 /* remote */ = {
+			isa = PBXGroup;
+			children = (
+				B96C41522C58B5EA00CEB929 /* CCTVDto.swift */,
+				B96C41542C58B71D00CEB929 /* APIClient.swift */,
+			);
+			path = remote;
+			sourceTree = "<group>";
+		};
+		B96C415A2C58D89300CEB929 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				B9AE6B552C5A26AB0084A1AC /* Search */,
+				B9AE6B532C5A26A10084A1AC /* home */,
+				B96C41612C58DC8F00CEB929 /* cctv */,
+				B96C41642C58DCBC00CEB929 /* components */,
+				B9AE6B562C5A26AF0084A1AC /* Favorite */,
+				B96C41672C58E29F00CEB929 /* MainView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		B96C41612C58DC8F00CEB929 /* cctv */ = {
+			isa = PBXGroup;
+			children = (
+				B96C41652C58DCE800CEB929 /* CCTVDetailView.swift */,
+				B96C41562C58CA0A00CEB929 /* CCTVViewModel.swift */,
+			);
+			path = cctv;
+			sourceTree = "<group>";
+		};
+		B96C41642C58DCBC00CEB929 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				B96C41582C58CD6100CEB929 /* WebView.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		B9AE6B532C5A26A10084A1AC /* home */ = {
+			isa = PBXGroup;
+			children = (
+				B96C415B2C58D89F00CEB929 /* HomeView.swift */,
+				B9AE6B5B2C5A2E710084A1AC /* HomeViewModel.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		B9AE6B552C5A26AB0084A1AC /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B96C415D2C58D8AD00CEB929 /* SearchView.swift */,
+				B94E140B2C5B560300C315E3 /* SearchBar.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		B9AE6B562C5A26AF0084A1AC /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				B96C415F2C58D8DA00CEB929 /* FavoriteView.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		B9AE6B572C5A273B0084A1AC /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				B9AE6B582C5A27650084A1AC /* LocationManager.swift */,
+			);
+			path = manager;
+			sourceTree = "<group>";
+		};
+		B9BE124F2C5A9FB90002FCEF /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				B9BE12502C5A9FC90002FCEF /* LocationUtil.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +261,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B95144482C57882800F345BA /* ContentView.swift in Sources */,
-				B95144462C57882800F345BA /* Tainan_CCTVApp.swift in Sources */,
+				B96C41532C58B5EA00CEB929 /* CCTVDto.swift in Sources */,
+				B92030EF2C5B98EA0092FDF1 /* UserDefaultManager.swift in Sources */,
+				B96C41662C58DCE800CEB929 /* CCTVDetailView.swift in Sources */,
+				B96C415C2C58D89F00CEB929 /* HomeView.swift in Sources */,
+				B96C41572C58CA0A00CEB929 /* CCTVViewModel.swift in Sources */,
+				B94E140C2C5B560300C315E3 /* SearchBar.swift in Sources */,
+				B96C415E2C58D8AD00CEB929 /* SearchView.swift in Sources */,
+				B96C416C2C58F1AE00CEB929 /* Constants.swift in Sources */,
+				B9BE12512C5A9FC90002FCEF /* LocationUtil.swift in Sources */,
+				B96C41592C58CD6100CEB929 /* WebView.swift in Sources */,
+				B96C41682C58E29F00CEB929 /* MainView.swift in Sources */,
+				B9AE6B5C2C5A2E710084A1AC /* HomeViewModel.swift in Sources */,
+				B95144462C57882800F345BA /* App.swift in Sources */,
+				B96C41602C58D8DA00CEB929 /* FavoriteView.swift in Sources */,
+				B96C41552C58B71D00CEB929 /* APIClient.swift in Sources */,
+				B9AE6B592C5A27650084A1AC /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,8 +410,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Tainan_CCTV/Preview Content\"";
+				DEVELOPMENT_TEAM = 887KJL9KL8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Tainan-CCTV-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -300,8 +440,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Tainan_CCTV/Preview Content\"";
+				DEVELOPMENT_TEAM = 887KJL9KL8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Tainan-CCTV-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

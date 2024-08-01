@@ -10,9 +10,25 @@ import Combine
 
 class CCTVViewModel: ObservableObject {
     @Published var cctvList: [CCTVDto] = []
+    @Published var favoriteCCTVList:[CCTVDto] = []
     @Published var errorMessage: String?
-
+    @Published var searchText: String = ""
+    private let storageManager = UserDefaultsManager()
+    
+    
     private let apiClient = APIClient()
+    
+    init(){
+        loadFavoriteCCTVList()
+    }
+    
+    var filteredCctvList: [CCTVDto] {
+        if searchText.isEmpty {
+            return cctvList
+        } else {
+            return cctvList.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+        }
+    }
     
     func fetchCCTV() {
         apiClient.fetchCCTV { result in
@@ -21,10 +37,18 @@ class CCTVViewModel: ObservableObject {
                 case .success(let cctvArray):
                     self.cctvList = cctvArray
                 case .failure(let error):
-                    print(error.localizedDescription)
                     self.errorMessage = "Failed to fetch CCTV data: \(error.localizedDescription)"
                 }
             }
         }
+    }
+    
+    private func loadFavoriteCCTVList() {
+        favoriteCCTVList = storageManager.loadFavoriteCCTVList()
+    }
+    
+    func insertFavoriteCCTVDto(cctv: CCTVDto) {
+        storageManager.insertFavoriteCCTV(cctv)
+        loadFavoriteCCTVList()
     }
 }

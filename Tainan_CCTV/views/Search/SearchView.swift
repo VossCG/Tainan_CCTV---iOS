@@ -9,14 +9,35 @@ import SwiftUI
 
 
 struct SearchView: View {
-    @StateObject private var viewModel = CCTVViewModel()
+    @ObservedObject var cctvViewModel:CCTVViewModel
     
     var body: some View {
-        NavigationView {
-            CCTVList(cctvList:viewModel.cctvList, errorMessage:viewModel.errorMessage)
-        }
-        .onAppear {
-            viewModel.fetchCCTV()
+        VStack{
+            SearchBar(text: $cctvViewModel.searchText)
+            
+            if let errorMessage = cctvViewModel.errorMessage{
+                Spacer()
+                Text("Error: \(errorMessage)")
+                    .foregroundColor(.red)
+                Spacer()
+            }
+            else {
+                List(cctvViewModel.filteredCctvList,id: \.id){cctv in
+                    HStack {
+                        Text(cctv.name)
+                            .lineLimit(1)
+                            .truncationMode(.tail)
+                            .swipeActions(edge:.trailing){
+                                Button(action: {
+                                    cctvViewModel.insertFavoriteCCTVDto(cctv: cctv)
+                                }, label: {
+                                    Image(systemName: "star")
+                                }).tint(.green)
+                            }
+                    }
+                    
+                }.listStyle(.plain)
+            }
         }
     }
 }

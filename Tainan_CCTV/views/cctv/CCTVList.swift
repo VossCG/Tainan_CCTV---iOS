@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct CCTVList: View {
+    
+    let cctvList:[CCTVDto]
+    let errorMessage:String?
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if let errorMessage = errorMessage{
+            Spacer()
+            Text("Error: \(errorMessage)")
+                .foregroundColor(.red)
+            Spacer()
+        }
+        else {
+            List{
+                ForEach(cctvList, id: \.id) { cctv in
+                    NavigationLink(destination: CCTVDetailView(cctv: cctv)) {
+                        Text(cctv.name).lineLimit(1).truncationMode(/*@START_MENU_TOKEN@*/.tail/*@END_MENU_TOKEN@*/)
+                    }
+                }
+            }.listStyle(.inset)
+        }
     }
-}
-
-#Preview {
-    CCTVList()
 }

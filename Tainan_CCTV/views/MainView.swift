@@ -8,24 +8,28 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject private var cctvViewModel = CCTVViewModel()
+    
     var body: some View {
-            TabView {
-                HomeView()
-                    .tabItem {
-                        Image(systemName: "house.fill")
-                    }
-                
-                SearchView()
-                    .tabItem {
-                        Image(systemName: "magnifyingglass")
-                    }
-                
-                FavoriteView()
-                    .tabItem {
-                        Image(systemName: "star.fill")
-                    }
-            }
+        TabView {
+            HomeView(cctvViewModel: cctvViewModel)
+                .tabItem {
+                    Image(systemName: "house.fill")
+                }
+            
+            SearchView(cctvViewModel: cctvViewModel)
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                }
+            
+            FavoriteView(cctvViewModel: cctvViewModel)
+                .tabItem {
+                    Image(systemName: "star.fill")
+                }
+        }.onAppear{
+            cctvViewModel.fetchCCTV()
         }
+    }
 }
 
 #Preview {

@@ -9,46 +9,45 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @StateObject private var homeViewModel = HomeViewModel()
+    @ObservedObject var cctvViewModel: CCTVViewModel
+    @State private var closestCCTVs: [CCTVDto] = []
+    
+    
     var body: some View {
-            VStack(spacing: 0) {
-                HStack {
-                    Text("我的位置").padding()
-                    Spacer()
-                    Button(action: {}){
-                        Image(systemName: "location.magnifyingglass").padding()
+        VStack(spacing: 0) {
+            
+            if let errorMessage = cctvViewModel.errorMessage{
+                Text(errorMessage)
+                    .foregroundColor(.red)
+                    .padding()
+            }else if cctvViewModel.cctvList.isEmpty{
+                ProgressView()
+                    .scaleEffect(3.0)
+            }else {
+                LazyVStack(spacing: 12) {
+                    ForEach(closestCCTVs, id: \.id) { cctv in
+                        VStack(alignment: .leading) {
+                            Text("\(cctv.name)")
+                                .lineLimit(1)
+                                .truncationMode(/*@START_MENU_TOKEN@*/.tail/*@END_MENU_TOKEN@*/)
+                            if let url = URL(string: cctv.url) {
+                                WebView(url: url)
+                                    .aspectRatio(1.475, contentMode: .fit)
+                                    .frame(maxWidth: .infinity)
+                            }
+                        }
                     }
-                    Button(action: {}){
-                        Image(systemName: "location").padding()
-                    }
-                    Button(action: {}){
-                        Image(systemName: "arrow.clockwise").padding()
-                    }
-                }
-                Spacer()
-                Text(Constants.TEST_CCTV_NAME)
-                if let url = URL(string: Constants.TEST_CCTV_URL) {
-                    WebView(url: url)
-                        .aspectRatio(1.475, contentMode: /*@START_MENU_TOKEN@*/.fit/*@END_MENU_TOKEN@*/)
-                        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                        .padding(12)
-                    
-                }
-                Text(Constants.TEST_CCTV_NAME)
-                if let url = URL(string: Constants.TEST_CCTV_URL) {
-                    WebView(url: url)
-                        .aspectRatio(1.475, contentMode: /*@START_MENU_TOKEN@*/.fit/*@END_MENU_TOKEN@*/)
-                        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                        .padding(12)
-                    
-                }
-                Spacer()
+                }.padding()
             }
-          
+        }.onReceive(cctvViewModel.$cctvList) { cctvList in
+            if !cctvList.isEmpty {
+                closestCCTVs = LocationUtils.findClosestCCTVs(
+                    toLatitude: homeViewModel.latitude,
+                    longitude: homeViewModel.longitude,
+                    cctvList: cctvList)
+            }
         }
-}
-
-
-
-#Preview {
-    HomeView()
+    }
+    
 }
