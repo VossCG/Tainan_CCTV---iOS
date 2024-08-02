@@ -22,8 +22,8 @@
 		B96C41662C58DCE800CEB929 /* CCTVDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96C41652C58DCE800CEB929 /* CCTVDetailView.swift */; };
 		B96C41682C58E29F00CEB929 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96C41672C58E29F00CEB929 /* MainView.swift */; };
 		B96C416C2C58F1AE00CEB929 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96C416B2C58F1AE00CEB929 /* Constants.swift */; };
+		B97B73982C5CD64600631B31 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97B73972C5CD64600631B31 /* Toast.swift */; };
 		B9AE6B592C5A27650084A1AC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AE6B582C5A27650084A1AC /* LocationManager.swift */; };
-		B9AE6B5C2C5A2E710084A1AC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AE6B5B2C5A2E710084A1AC /* HomeViewModel.swift */; };
 		B9BE12512C5A9FC90002FCEF /* LocationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BE12502C5A9FC90002FCEF /* LocationUtil.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,9 +44,9 @@
 		B96C41652C58DCE800CEB929 /* CCTVDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CCTVDetailView.swift; path = ../components/CCTVDetailView.swift; sourceTree = "<group>"; };
 		B96C41672C58E29F00CEB929 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B96C416B2C58F1AE00CEB929 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B97B73972C5CD64600631B31 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		B9AE6B582C5A27650084A1AC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		B9AE6B5A2C5A2B410084A1AC /* Tainan-CCTV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Tainan-CCTV-Info.plist"; sourceTree = SOURCE_ROOT; };
-		B9AE6B5B2C5A2E710084A1AC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B9BE12502C5A9FC90002FCEF /* LocationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +88,7 @@
 		B95144442C57882800F345BA /* Tainan_CCTV */ = {
 			isa = PBXGroup;
 			children = (
+				B97B73992C5CE28A00631B31 /* model */,
 				B92030ED2C5B98D00092FDF1 /* db */,
 				B9BE124F2C5A9FB90002FCEF /* utils */,
 				B951444B2C57882A00F345BA /* Preview Content */,
@@ -113,7 +114,6 @@
 		B96C41512C58B5C200CEB929 /* remote */ = {
 			isa = PBXGroup;
 			children = (
-				B96C41522C58B5EA00CEB929 /* CCTVDto.swift */,
 				B96C41542C58B71D00CEB929 /* APIClient.swift */,
 			);
 			path = remote;
@@ -145,15 +145,23 @@
 			isa = PBXGroup;
 			children = (
 				B96C41582C58CD6100CEB929 /* WebView.swift */,
+				B97B73972C5CD64600631B31 /* Toast.swift */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		B97B73992C5CE28A00631B31 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B96C41522C58B5EA00CEB929 /* CCTVDto.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		B9AE6B532C5A26A10084A1AC /* home */ = {
 			isa = PBXGroup;
 			children = (
 				B96C415B2C58D89F00CEB929 /* HomeView.swift */,
-				B9AE6B5B2C5A2E710084A1AC /* HomeViewModel.swift */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -263,6 +271,7 @@
 			files = (
 				B96C41532C58B5EA00CEB929 /* CCTVDto.swift in Sources */,
 				B92030EF2C5B98EA0092FDF1 /* UserDefaultManager.swift in Sources */,
+				B97B73982C5CD64600631B31 /* Toast.swift in Sources */,
 				B96C41662C58DCE800CEB929 /* CCTVDetailView.swift in Sources */,
 				B96C415C2C58D89F00CEB929 /* HomeView.swift in Sources */,
 				B96C41572C58CA0A00CEB929 /* CCTVViewModel.swift in Sources */,
@@ -272,7 +281,6 @@
 				B9BE12512C5A9FC90002FCEF /* LocationUtil.swift in Sources */,
 				B96C41592C58CD6100CEB929 /* WebView.swift in Sources */,
 				B96C41682C58E29F00CEB929 /* MainView.swift in Sources */,
-				B9AE6B5C2C5A2E710084A1AC /* HomeViewModel.swift in Sources */,
 				B95144462C57882800F345BA /* App.swift in Sources */,
 				B96C41602C58D8DA00CEB929 /* FavoriteView.swift in Sources */,
 				B96C41552C58B71D00CEB929 /* APIClient.swift in Sources */,

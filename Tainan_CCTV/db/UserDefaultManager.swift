@@ -13,8 +13,23 @@ class UserDefaultsManager {
     
     func insertFavoriteCCTV(_ cctv: CCTVDto) {
         var cctvList = loadFavoriteCCTVList()
-        cctvList.append(cctv)
-        saveFavoriteCCTVList(cctvList)
+        
+        if !cctvList.contains(where: { existingCCTV in
+            existingCCTV.id == cctv.id
+        }) {
+            cctvList.append(cctv)
+            saveFavoriteCCTVList(cctvList)
+        }
+    }
+    
+    func deleteFavoriteCCTV(_ cctv: CCTVDto) {
+        var cctvList = loadFavoriteCCTVList()
+        
+        
+        if let index = cctvList.firstIndex(where: { $0.id == cctv.id }) {
+            cctvList.remove(at: index)
+            saveFavoriteCCTVList(cctvList)
+        }
     }
     
     private func saveFavoriteCCTVList(_ cctvList: [CCTVDto]) {

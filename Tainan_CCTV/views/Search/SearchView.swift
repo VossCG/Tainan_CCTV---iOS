@@ -10,34 +10,42 @@ import SwiftUI
 
 struct SearchView: View {
     @ObservedObject var cctvViewModel:CCTVViewModel
+    @State private var currentLocation = LocationManager.getCurrentLocation()
+    @State private var showingToast = false
+    @State private var toastMessage = ""
+    
     
     var body: some View {
-        VStack{
-            SearchBar(text: $cctvViewModel.searchText)
-            
-            if let errorMessage = cctvViewModel.errorMessage{
-                Spacer()
-                Text("Error: \(errorMessage)")
-                    .foregroundColor(.red)
-                Spacer()
-            }
-            else {
-                List(cctvViewModel.filteredCctvList,id: \.id){cctv in
+        NavigationView{
+            VStack{
+                SearchBar(text: $cctvViewModel.searchText).padding(8)
+                List(cctvViewModel.filteredCctvList.sortedByDistance(from: currentLocation)
+                     ,id: \.id){cctv in
                     HStack {
-                        Text(cctv.name)
-                            .lineLimit(1)
-                            .truncationMode(.tail)
-                            .swipeActions(edge:.trailing){
-                                Button(action: {
-                                    cctvViewModel.insertFavoriteCCTVDto(cctv: cctv)
-                                }, label: {
-                                    Image(systemName: "star")
-                                }).tint(.green)
-                            }
+                        NavigationLink(destination: CCTVDetailView(cctv: cctv)){
+                            Text(cctv.name)
+                                .padding(8)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                                .swipeActions(edge:.trailing){
+                                    Button(action: {
+                                        if cctvViewModel.isFavoriteCCTV(cctv: cctv) {
+                                            toastMessage = "已加入最愛"
+                                            showingToast = true
+                                        } else {
+                                            cctvViewModel.insertFavoriteCCTV(cctv: cctv)
+                                        }
+                                    }, label: {
+                                        Image(systemName: "star")
+                                    }).tint(.green)
+                                }
+                        }
                     }
-                    
-                }.listStyle(.plain)
+                }
+                     .listStyle(.plain)
             }
         }
+        .listRowBackground(Color.clear)
+        .toast(isShow: $showingToast,info: toastMessage)
     }
 }

@@ -9,10 +9,9 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject private var homeViewModel = HomeViewModel()
     @ObservedObject var cctvViewModel: CCTVViewModel
     @State private var closestCCTVs: [CCTVDto] = []
-    
+    @State private var currentLocation = LocationManager.getCurrentLocation()
     
     var body: some View {
         VStack(spacing: 0) {
@@ -42,10 +41,7 @@ struct HomeView: View {
             }
         }.onReceive(cctvViewModel.$cctvList) { cctvList in
             if !cctvList.isEmpty {
-                closestCCTVs = LocationUtils.findClosestCCTVs(
-                    toLatitude: homeViewModel.latitude,
-                    longitude: homeViewModel.longitude,
-                    cctvList: cctvList)
+                closestCCTVs = Array(cctvList.prefix(2))
             }
         }
     }

@@ -35,7 +35,7 @@ class CCTVViewModel: ObservableObject {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let cctvArray):
-                    self.cctvList = cctvArray
+                    self.cctvList = cctvArray.sortedByDistance(from: LocationManager.getCurrentLocation())
                 case .failure(let error):
                     self.errorMessage = "Failed to fetch CCTV data: \(error.localizedDescription)"
                 }
@@ -47,8 +47,19 @@ class CCTVViewModel: ObservableObject {
         favoriteCCTVList = storageManager.loadFavoriteCCTVList()
     }
     
-    func insertFavoriteCCTVDto(cctv: CCTVDto) {
+    func insertFavoriteCCTV(cctv: CCTVDto) {
         storageManager.insertFavoriteCCTV(cctv)
         loadFavoriteCCTVList()
+    }
+    
+    func deleteFavoriteCCTV(cctv:CCTVDto){
+        storageManager.deleteFavoriteCCTV(cctv)
+        loadFavoriteCCTVList()
+    }
+    
+    func isFavoriteCCTV(cctv: CCTVDto) -> Bool {
+        return favoriteCCTVList.contains { existingCCTV in
+            existingCCTV.id == cctv.id
+        }
     }
 }

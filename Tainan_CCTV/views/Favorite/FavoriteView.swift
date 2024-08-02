@@ -14,16 +14,17 @@ struct FavoriteView: View {
     var body: some View {
         NavigationView{
             VStack(alignment: .leading, content: {
-                List(cctvViewModel.favoriteCCTVList, id: \.id) { cctv in
+                List(cctvViewModel.favoriteCCTVList.sorted(), id: \.id) { cctv in
                     HStack {
                         NavigationLink(destination: CCTVDetailView(cctv: cctv)){
                             Text(cctv.name)
+                                .padding(8)
                                 .lineLimit(1)
                                 .truncationMode(.tail)
                             Spacer()
                         }
                         Button(action: {
-                            cctvViewModel.insertFavoriteCCTVDto(cctv: cctv)
+                            cctvViewModel.deleteFavoriteCCTV(cctv:cctv)
                         }, label: {
                             Image(systemName: "star.fill")
                         }).buttonStyle(PlainButtonStyle())
