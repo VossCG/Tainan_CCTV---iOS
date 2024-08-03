@@ -23,7 +23,7 @@ struct SearchView: View {
                      ,id: \.id){cctv in
                     HStack {
                         NavigationLink(destination: CCTVDetailView(cctv: cctv)){
-                            Text(cctv.name)
+                            Label(cctv.name,systemImage: "location.circle")
                                 .padding(8)
                                 .lineLimit(1)
                                 .truncationMode(.tail)
@@ -41,8 +41,7 @@ struct SearchView: View {
                                 }
                         }
                     }
-                }
-                     .listStyle(.plain)
+                }.listStyle(.plain)
             }
         }
         .listRowBackground(Color.clear)

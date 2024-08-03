@@ -14,24 +14,27 @@ struct FavoriteView: View {
     var body: some View {
         NavigationView{
             VStack(alignment: .leading, content: {
-                List(cctvViewModel.favoriteCCTVList.sorted(), id: \.id) { cctv in
-                    HStack {
-                        NavigationLink(destination: CCTVDetailView(cctv: cctv)){
-                            Text(cctv.name)
+                List{
+                    ForEach(cctvViewModel.favoriteCCTVList.sorted(), id: \.id) { cctv in
+                        NavigationLink(destination: CCTVDetailView(cctv: cctv)) {
+                            Label(cctv.name,systemImage: "location.circle")
                                 .padding(8)
                                 .lineLimit(1)
                                 .truncationMode(.tail)
-                            Spacer()
+                            
                         }
-                        Button(action: {
-                            cctvViewModel.deleteFavoriteCCTV(cctv:cctv)
-                        }, label: {
-                            Image(systemName: "star.fill")
-                        }).buttonStyle(PlainButtonStyle())
                     }
-                }.listStyle(.plain)
-            })
-            .navigationTitle("我的最愛")
+                    .onDelete { indexSet in
+                        for index in indexSet {
+                            let sortedList = cctvViewModel.favoriteCCTVList.sorted()
+                            let removeCCTV = sortedList[index]
+                            cctvViewModel.deleteFavoriteCCTV(cctv: removeCCTV)
+                        }
+                    }
+                }
+                .listStyle(.plain)
+                
+            }).navigationTitle("Collections")
         }
     }
 }
